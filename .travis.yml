@@ -15,12 +15,12 @@ before_install:
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - git config --global user.email "hirofumi-yoshida@science.co.jp"
   - git config --global user.name "hirofumi-yoshida"
-  - git clone git@github.com:hirofumi-yoshida/asciidoctor-bs-dev2.git --recursive --depth=1
+  - git clone git@github.com:testEnvOrganization/master.git --recursive --depth=1
   - ls
 #  - git clean
   - cd asciidoctor-bs-dev2
   - git branch -a
-  - git fetch git@github.com:hirofumi-yoshida/asciidoctor-bs-dev2.git
+  - git fetch git@github.com:testEnvOrganization/master.git
   - git checkout master
   - git checkout -b gh-pages
   - git branch -a
@@ -39,16 +39,16 @@ after_success:
 #  - mkdir -p ~/.ssh/id_rsa
 #  - chmod 600 ~/.ssh/travis-gh_key
 #  - cp -aR example_from_dir example_dist_dir
-  - git fetch git@github.com:hirofumi-yoshida/asciidoctor-bs-dev2.git
+  - git fetch git@github.com:testEnvOrganization/master.git
   - git status
   - git add --all
   - git commit -a -m "by Travis CI (JOB $TRAVIS_JOB_NUMBER)"
-  - git push git@github.com:hirofumi-yoshida/asciidoctor-bs-dev2.git gh-pages --force
+  - git push git@github.com:testEnvOrganization/master.git gh-pages --force
 #deploy:
 #  provider: pages
 #  skip_cleanup: true
 #  github_token: 90f067546c451ffd0dff2448c6d313f23526ca14
 #  on:
 #    branch: master
-notifications:
-  slack: ds-wu-engineerteam:UPbtCtEBinOjVsS8Ut1iugy0
+#notifications:
+#  slack: ds-wu-engineerteam:UPbtCtEBinOjVsS8Ut1iugy0
