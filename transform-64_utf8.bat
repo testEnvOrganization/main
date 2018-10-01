@@ -1,5 +1,4 @@
-﻿
-@echo off
+﻿@echo off
 chcp 65001
 
 set FNAME=%0
