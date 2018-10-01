@@ -15,12 +15,12 @@ before_install:
 #  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - git config --global user.email "hirofumi-yoshida@science.co.jp"
   - git config --global user.name "hirofumi-yoshida"
-  - git clone git@github.com:testEnvOrganization/master.git --recursive --depth=1
+  - git clone git@github.com:testEnvOrganization/develop.git --recursive --depth=1
   - ls
 #  - git clean
   - cd asciidoctor-bs-dev2
   - git branch -a
-  - git fetch git@github.com:testEnvOrganization/master.git
+  - git fetch git@github.com:testEnvOrganization/develop.git
   - git checkout master
   - git checkout -b gh-pages
   - git branch -a
@@ -39,11 +39,11 @@ after_success:
 #  - mkdir -p ~/.ssh/id_rsa
 #  - chmod 600 ~/.ssh/travis-gh_key
 #  - cp -aR example_from_dir example_dist_dir
-  - git fetch git@github.com:testEnvOrganization/master.git
+  - git fetch git@github.com:testEnvOrganization/develop.git
   - git status
   - git add --all
   - git commit -a -m "by Travis CI (JOB $TRAVIS_JOB_NUMBER)"
-  - git push git@github.com:testEnvOrganization/master.git gh-pages --force
+  - git push git@github.com:testEnvOrganization/develop.git gh-pages --force
 #deploy:
 #  provider: pages
 #  skip_cleanup: true
