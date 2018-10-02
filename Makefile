@@ -32,4 +32,4 @@
 #	@echo "Build finished. The PDF file is in $(BUILDDIR)/pdf"
 
 check:
-	redpen -f asciidoc sample.adoc
+	redpen -f asciidoc 01_index.adoc
