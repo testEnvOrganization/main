@@ -35,6 +35,7 @@ script:
 #  - gem install --pre asciidoctor-pdf
 	- ls
 	- cd source
+	- ls
 	- make check
 after_success:
 ###  - openssl aes-256-cbc -K $encrypted_xxxx_key -iv $encrypted_xxxx_iv -in travis_key.enc -out ~/.ssh/id_rsa -d
