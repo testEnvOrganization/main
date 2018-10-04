@@ -1,4 +1,4 @@
-# Makefile for RedPen documentation
+Makefile for RedPen documentation
 #
 
 # You can set these variables from the command line.
