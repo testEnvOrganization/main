@@ -44,7 +44,7 @@ script:
   - git checkout -b gh-pages origin/master
   - git add . -A
   - git commit -m "by Travis CI (JOB $TRAVIS_JOB_NUMBER)"
-  - git push -u origin gh-pages
+  - git push origin gh-pages
 #deploy:
 #  provider: pages
 #  skip_cleanup: true
