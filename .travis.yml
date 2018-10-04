@@ -41,10 +41,10 @@ script:
 #  - cp -aR example_from_dir example_dist_dir
   - git fetch git@github.com:testEnvOrganization/master.git
   - git status
-  - git checkout -b gh-pages
+  - git checkout -b gh-pages origin/master
   - git add . -A
   - git commit -m "by Travis CI (JOB $TRAVIS_JOB_NUMBER)"
-  - git push
+  - git push origin gh-pages
 #deploy:
 #  provider: pages
 #  skip_cleanup: true
