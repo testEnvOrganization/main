@@ -52,4 +52,4 @@ script:
 #  on:
 #    branch: master
 notifications:
-  slack: humanscience-ds:nmKaZonGOKTcMNerd0EpKXP1
+  slack: humanscience-ds:bKpIKhcfWAAAugmKF5t7AF4B
