@@ -53,5 +53,3 @@ script:
 #    branch: master
 notifications:
   slack: humanscience-ds:nmKaZonGOKTcMNerd0EpKXP1
-
-
