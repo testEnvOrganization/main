@@ -42,6 +42,7 @@ script:
 #  - cp -aR example_from_dir example_dist_dir
   - git fetch git@github.com:testEnvOrganization/master.git
   - git status
+  - git checkout -b gh-pages
   - git add . -A
   - git commit -m "by Travis CI (JOB $TRAVIS_JOB_NUMBER)"
   - git push git@github.com:testEnvOrganization/master.git test --force
@@ -51,7 +52,7 @@ script:
 #  github_token: 90f067546c451ffd0dff2448c6d313f23526ca14
 #  on:
 #    branch: master
-#notifications:
-#  slack: ds-wu-engineerteam:UPbtCtEBinOjVsS8Ut1iugy0
+notifications:
+  slack: humanscience-ds:nmKaZonGOKTcMNerd0EpKXP1
 
 
