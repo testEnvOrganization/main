@@ -15,7 +15,7 @@ before_install:
   - ls ~/.ssh/
   - cat ~/.ssh/config
   - cat ~/.ssh/known_hosts
-#  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/known_hosts
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/known_hosts
   - host="github.com"
   - ssh-keygen -R $host
   - ssh-keyscan -H $host >> ~/.ssh/known_hosts
