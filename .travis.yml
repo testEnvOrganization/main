@@ -40,11 +40,11 @@ after_success:
 #  - chmod 600 ~/.ssh/travis-gh_key
 #  - cp -aR example_from_dir example_dist_dir
   - git config --global --list
-  - git remote add gh-pages git@github.com:testEnvOrganization/master.git
-  - git checkout -b gh-pages
+#  - git remote add gh-pages git@github.com:testEnvOrganization/master.git
+#  - git checkout -b gh-pages
   - git add . -A
   - git commit -m "by Travis CI (JOB $TRAVIS_JOB_NUMBER)"
-  - git push git@github.com:testEnvOrganization/master.git gh-pages
+  - git push
 #deploy:
 #  provider: pages
 #  skip_cleanup: true
