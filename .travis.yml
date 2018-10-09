@@ -16,14 +16,14 @@ before_install:
   - cat ~/.ssh/config
   - cat ~/.ssh/known_hosts
   - echo -e "Host github.com\n  StrictHostKeyChecking no\n" >> ~/.ssh/config
-#  - host="github.com"
-#  - ssh-keygen -R $host
-#  - ssh-keyscan -H $host >> ~/.ssh/known_hosts
+  - host="github.com"
+  - ssh-keygen -R $host
+  - ssh-keyscan -H $host >> ~/.ssh/known_hosts
   - cat ~/.ssh/config
   - cat ~/.ssh/known_hosts
   - git config --global user.email "hirofumi-yoshida@science.co.jp"
   - git config --global user.name "hs-yoshida"
-  - git clone git@github.com:testEnvOrganization/master.git --recursive --depth=1
+#  - git clone git@github.com:testEnvOrganization/master.git --recursive --depth=1
 #  - ls
 #  - git clean
 #  - cd asciidoctor-bs-dev2
@@ -49,8 +49,8 @@ after_success:
 #  - cp -aR example_from_dir example_dist_dir
   - git config --global --list
   - git branch -a
-#  - git remote add gh-pages git@github.com:testEnvOrganization/master.git
-#  - git checkout -b gh-pages
+  - git remote add gh-pages git@github.com:testEnvOrganization/master.git
+  - git checkout -b gh-pages
   - git add . -A
   - git commit -m "by Travis CI (JOB $TRAVIS_JOB_NUMBER)"
   - git push git@github.com:testEnvOrganization/master.git origin HEAD:develop
