@@ -15,15 +15,15 @@ before_install:
 #  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - git config --global user.email "hirofumi-yoshida@science.co.jp"
   - git config --global user.name "hs-yoshida"
-#  - git clone git@github.com:testEnvOrganization/master.git --recursive --depth=1
+  - git clone git@github.com:testEnvOrganization/master.git --recursive --depth=1
 #  - ls
-#  - git clean
+  - git clean
 #  - cd asciidoctor-bs-dev2
-#  - git branch -a
-#  - git fetch git@github.com:testEnvOrganization/master.git
-#  - git checkout master
-#  - git checkout -b gh-pages
-#  - git branch -a
+  - git branch -a
+  - git fetch git@github.com:testEnvOrganization/master.git
+  - git checkout master
+  - git checkout -b gh-pages
+  - git branch -a
 #  - git checkout -b gh-pages
 install:
   - wget $URL/redpen-1.10.1.tar.gz
