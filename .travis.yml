@@ -33,7 +33,7 @@ script:
 #  - gem install asciidoctor
 #  - gem install coderay
 #  - gem install --pre asciidoctor-pdf
-  - make check
+  - redpen -f asciidoc source/*.adoc
 #after_success:
 ###  - openssl aes-256-cbc -K $encrypted_xxxx_key -iv $encrypted_xxxx_iv -in travis_key.enc -out ~/.ssh/id_rsa -d
 #  - mkdir -p ~/.ssh/id_rsa
