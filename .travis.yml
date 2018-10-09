@@ -16,10 +16,10 @@ before_install:
   - git config --global user.email "hirofumi-yoshida@science.co.jp"
   - git config --global user.name "hs-yoshida"
 #  - git clone git@github.com:testEnvOrganization/master.git --recursive --depth=1
-#  - ls
+  - ls
 #  - git clean
 #  - cd asciidoctor-bs-dev2
-#  - git branch -a
+  - git branch -a
 #  - git fetch git@github.com:testEnvOrganization/master.git
 #  - git checkout master
 #  - git checkout -b gh-pages
@@ -43,7 +43,7 @@ script:
   - git checkout -b gh-pages
   - git add . -A
   - git commit -m "by Travis CI (JOB $TRAVIS_JOB_NUMBER)"
-  - git push git@github.com:testEnvOrganization/master.git gh-pages
+  - git push git@github.com:testEnvOrganization/master.git gh-pages --force
 #deploy:
 #  provider: pages
 #  skip_cleanup: true
