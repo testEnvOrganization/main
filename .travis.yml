@@ -44,7 +44,7 @@ after_success:
 #  - git checkout -b gh-pages
   - git add . -A
   - git commit -m "by Travis CI (JOB $TRAVIS_JOB_NUMBER)"
-  - git push
+  - git push origin HEAD:develop
 #deploy:
 #  provider: pages
 #  skip_cleanup: true
