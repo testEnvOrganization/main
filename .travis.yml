@@ -10,14 +10,14 @@ env:
 # - secure: ilVji3TyCABfKS267DNXGZDu0QQdu7SVO86B7XLRCzvBcNReEo+lYBPrBK/ipyo39CAvyokN/wF+ONcIwCGXdTiVZUnpQaXcqhUUhRDkMpH5gynAvd1qlms/nh6SSDj9bzY5mVcXY3vkV2aO7zpF6+kqkcVTXHKDT5g+bN8eYwU84bw7M14p1ndB4a5MvOog6yozTbFT1PCRJgUWmtk8chZ2E2/yCv3HOmA6RdIDR/7/gWKhczUvxeDr4TmQTrY/qRwvMM3b47r7/jlJihytKeISvX2XPoz7HOGNsL7g3gmrTVjMX6KYIxeNntmTjhC3EV/E9YvwxLXfWhFtXq8Fp8WaQcWOnQYOX0NLf7sbV4AclWX9+Wavb2dFpuDQ5uEC9xElB26F4XreZAM8rRRXgD6oYVm/ktz0tCq11f6CKx4d3lEy73JRUDkcgDY35IPW284SBqofiDmNykli5tN5yB+kCcmAKeiLaLr7aThQxvjYwesyq9EBtVKAf1cPWQKGRXHt1pA+wYc7m1haigEMrKAxa3qtOqa0NOYwqx5BIWycHpHtWv6KEmqBkG/FeTI0iqC8WEy4h8IrqS2vpCmT8EiOlrKi8WSrrc0LVsMqeYR9Pm22LeaPk+GO8XCF2Mq78atPaZ65eaMsTo05wRFv3FCoNdRrYZ9prewrA6I5qC8=
 #  - secure: uAhIQ6XEUY3EBwbXru2RswJtjH9TFhrvMfxSDmTtGi51mvYjFDsZjR/BUhjgO9I0jTpf7BwtGLrRT92BElWdnN0icdQVvD6++G+omRB8slysO7FmI+NfgTlB774QXif9+pqkrwfLAmibVMBx9STqipn4oZh+1D+7BEPsi0BzPXDJ0Y3BYKcdP7Cx/FccBHU2MtVHR7eQXp4aMU730A8dhgwHOCPJY5qbxJWcLYduKW9K+f3Jie+55Iolz3+o9h8M2r+6F02ukd6i/60RcS8OBzsncw5ahan7SwttoNFm5E50Gfy4bnNGknwt2Z/mPLimxd1bU9y8LiYCsp7HmrIRqeERZyXLn3Hb9NtWDrL0CTU2ExWQyXIwi2Qbzdv7ers2fAvAwahtAD9rWuNMpIjfayFzhRq80j9zY1a6fC2zHyOpthmWp6/FkfC+nOdPsHUF8M9LxjEImpz2b061Cbv16zG/cKRBCu3GRyFDNkma3XOQscalqNPLuC+86aiCiHiMkIO2Ez1oJQgPFGyeG/0rkOr2xEhIexjTtyxHAsPDCbQ5/yVOVgGDnz2BVDJ4GetArCCK8nzzRWJ2mbPoxgBoqpQ4u/Hn925xotQXVbuMTvHXz+7AeSWZtHKjRGB3N6ELJQD9pmbsYBsrPZ/SMAqqajTf5ctB8XUaXRYbv6usrI4=
 before_install:
-#  - openssl aes-256-cbc -K $encrypted_9e1f9214dafa_key -iv $encrypted_9e1f9214dafa_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
-#  - chmod 600 ~/.ssh/id_rsa
-#  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - openssl aes-256-cbc -K $encrypted_9e1f9214dafa_key -iv $encrypted_9e1f9214dafa_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
+  - chmod 600 ~/.ssh/id_rsa
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - git config --global user.email "hirofumi-yoshida@science.co.jp"
   - git config --global user.name "hs-yoshida"
-#  - git clone git@github.com:testEnvOrganization/master.git --recursive --depth=1
+  - git clone git@github.com:testEnvOrganization/master.git --recursive --depth=1
   - ls
-#  - git clean
+  - git clean
 #  - cd asciidoctor-bs-dev2
   - git branch -a
 #  - git fetch git@github.com:testEnvOrganization/master.git
