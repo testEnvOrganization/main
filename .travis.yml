@@ -15,10 +15,10 @@ before_install:
   - ls ~/.ssh/
   - cat ~/.ssh/config
   - cat ~/.ssh/known_hosts
-  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-  - host="github.com"
-  - ssh-keygen -R $host
-  - ssh-keyscan -H $host >> ~/.ssh/known_hosts
+  - echo -e "Host github.com\n  StrictHostKeyChecking no\n" >> ~/.ssh/config
+#  - host="github.com"
+#  - ssh-keygen -R $host
+#  - ssh-keyscan -H $host >> ~/.ssh/known_hosts
   - cat ~/.ssh/config
   - cat ~/.ssh/known_hosts
 #  - git config --global user.email "hirofumi-yoshida@science.co.jp"
