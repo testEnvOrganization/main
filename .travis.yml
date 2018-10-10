@@ -16,7 +16,7 @@ before_install:
   - cat ~/.ssh/config
   - git config --global user.email "hirofumi-yoshida@science.co.jp"
   - git config --global user.name "hs-yoshida"
-  - git clone git@github.com:testEnvOrganization/master.git --recursive --depth=1
+#  - git clone git@github.com:testEnvOrganization/master.git --recursive --depth=1
   - git branch -a
   - git fetch git@github.com:testEnvOrganization/master.git
   - git checkout develop
