@@ -6,18 +6,18 @@ jdk:
 env:
   - URL=https://github.com/redpen-cc/redpen/releases/download/redpen-1.10.1
 before_install:
-  - openssl aes-256-cbc -K $encrypted_1d5c74be6b6b_key -iv $encrypted_1d5c74be6b6b_iv -in deploy_key.enc -out ~/.ssh/deploy_key -md md5
+  - openssl aes-256-cbc -K $encrypted_1d5c74be6b6b_key -iv $encrypted_1d5c74be6b6b_iv -in github_travis_key.enc -out github_travis_key -d
   - eval "$(ssh-agent -s)"
-  - chmod 600 ~/.ssh/deploy_key
+  - chmod 600 ~/.ssh/github_travis_key
   - ls ~/.ssh/
   - cat ~/.ssh/config
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - cat ~/.ssh/config
-#  - git config --global user.email "hirofumi-yoshida@science.co.jp"
-#  - git config --global user.name "hs-yoshida"
+  - git config --global user.email "hirofumi-yoshida@science.co.jp"
+  - git config --global user.name "hs-yoshida"
   - git clone git@github.com:testEnvOrganization/master.git --recursive --depth=1
   - git branch -a
-#  - git fetch git@github.com:testEnvOrganization/master.git
+  - git fetch git@github.com:testEnvOrganization/master.git
   - git checkout develop
   - git branch -a
 install:
@@ -27,9 +27,6 @@ install:
 script:
   - redpen -f asciidoc source/*.adoc
 after_success:
-  - openssl aes-256-cbc -K $encrypted_1d5c74be6b6b_key -iv $encrypted_1d5c74be6b6b_iv -in deploy_key.enc -out ~/.ssh/deploy_key -md md5
-  - eval "$(ssh-agent -s)"
-  - chmod 600 ~/.ssh/deploy_key
   - git config --global --list
   - git branch -a
   - git remote add gh-pages git@github.com:testEnvOrganization/master.git
@@ -37,11 +34,5 @@ after_success:
   - git add . -A
   - git commit -m "by Travis CI (JOB $TRAVIS_JOB_NUMBER)"
   - git push git@github.com:testEnvOrganization/master.git gh-pages --force
-#deploy:
-#  provider: pages
-#  skip_cleanup: true
-#  github_token: 90f067546c451ffd0dff2448c6d313f23526ca14
-#  on:
-#    branch: master
 notifications:
   slack: humanscience-ds:bKpIKhcfWAAAugmKF5t7AF4B
