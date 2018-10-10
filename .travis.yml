@@ -6,10 +6,10 @@ jdk:
 env:
   - URL=https://github.com/redpen-cc/redpen/releases/download/redpen-1.10.1
 before_install:
-  - openssl aes-256-cbc -K $encrypted_1d5c74be6b6b_key -iv $encrypted_1d5c74be6b6b_iv -in deploy_key.enc -out ~/.ssh/id_rsa -md md5
+  - openssl aes-256-cbc -K $encrypted_1d5c74be6b6b_key -iv $encrypted_1d5c74be6b6b_iv -in deploy_key.enc -out ~/.ssh/deploy_key -md md5
   - eval "$(ssh-agent -s)"
-  - chmod 600 ~/.ssh/id_rsa
-  - ssh-add ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/deploy_key
+  - ssh-add ~/.ssh/deploy_key
   - ls ~/.ssh/
   - cat ~/.ssh/config
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
@@ -28,10 +28,10 @@ install:
 script:
   - redpen -f asciidoc source/*.adoc
 after_success:
-  - openssl aes-256-cbc -K $encrypted_1d5c74be6b6b_key -iv $encrypted_1d5c74be6b6b_iv -in deploy_key.enc -out ~/.ssh/id_rsa -md md5
+  - openssl aes-256-cbc -K $encrypted_1d5c74be6b6b_key -iv $encrypted_1d5c74be6b6b_iv -in deploy_key.enc -out ~/.ssh/deploy_key -md md5
   - eval "$(ssh-agent -s)"
-  - chmod 600 ~/.ssh/id_rsa
-  - ssh-add ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/deploy_key
+  - ssh-add ~/.ssh/deploy_key
   - git config --global --list
   - git branch -a
   - git remote add gh-pages git@github.com:testEnvOrganization/master.git
