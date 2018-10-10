@@ -6,7 +6,7 @@ jdk:
 env:
   - URL=https://github.com/redpen-cc/redpen/releases/download/redpen-1.10.1
 before_install:
-  - openssl aes-256-cbc -K $encrypted_9e1f9214dafa_key -iv $encrypted_9e1f9214dafa_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
+  - openssl aes-256-cbc -K $encrypted_9e1f9214dafa_key -iv $encrypted_9e1f9214dafa_iv -in id_rsa.enc -out ~/.ssh/id_rsa -md md5
 #  - mv dep_key ~/.ssh/
 #  - eval "$(ssh-agent -s)"
   - chmod 600 ~/.ssh/id_rsa
@@ -29,12 +29,10 @@ install:
 script:
   - redpen -f asciidoc source/*.adoc
 after_success:
-  - git config --global --list
-  - git branch -a
-  - git remote add gh-pages git@github.com:testEnvOrganization/master.git
-  - git checkout -b gh-pages
-  - git add . -A
-  - git commit -m "by Travis CI (JOB $TRAVIS_JOB_NUMBER)"
+  - git fetch git@github.com:testEnvOrganization/master.git
+  - git status
+  - git add --all
+  - git commit -a -m "by Travis CI (JOB $TRAVIS_JOB_NUMBER)"
   - git push git@github.com:testEnvOrganization/master.git gh-pages --force
 notifications:
   slack: humanscience-ds:bKpIKhcfWAAAugmKF5t7AF4B
