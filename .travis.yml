@@ -31,7 +31,7 @@ before_install:
   - git branch -a
 #  - git fetch git@github.com:testEnvOrganization/master.git
   - git checkout develop
-  - git checkout -b gh-pages
+  - git checkout gh-pages
   - git branch -a
 #  - git checkout -b gh-pages
 install:
@@ -50,7 +50,7 @@ after_success:
 #  - cp -aR example_from_dir example_dist_dir
   - git config --global --list
   - git branch -a
-  - git remote add gh-pages git@github.com:testEnvOrganization/master.git
+#  - git remote add gh-pages git@github.com:testEnvOrganization/master.git
   - git checkout -b gh-pages
   - git add . -A
   - git commit -m "by Travis CI (JOB $TRAVIS_JOB_NUMBER)"
