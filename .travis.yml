@@ -10,7 +10,7 @@ before_install:
   - mv dep_key ~/.ssh/
   - eval "$(ssh-agent -s)"
   - chmod 600 ~/.ssh/dep_key
-  - ls -a ~/.ssh/
+  - ls ~/.ssh/
   - cat ~/.ssh/config
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - cat ~/.ssh/config
