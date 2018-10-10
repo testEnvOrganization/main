@@ -6,9 +6,10 @@ jdk:
 env:
   - URL=https://github.com/redpen-cc/redpen/releases/download/redpen-1.10.1
 before_install:
-  - openssl aes-256-cbc -K $encrypted_1d5c74be6b6b_key -iv $encrypted_1d5c74be6b6b_iv -in github_travis_key.enc -out github_travis_key -md md5
+  - openssl aes-256-cbc -K $encrypted_1d5c74be6b6b_key -iv $encrypted_1d5c74be6b6b_iv -in dep_key.enc -out dep_key -md md5
+  - cp dep_key ~/.ssh/
   - eval "$(ssh-agent -s)"
-  - chmod 600 ~/.ssh/github_travis_key
+  - chmod 600 ~/.ssh/dep_key
   - ls ~/.ssh/
   - cat ~/.ssh/config
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
