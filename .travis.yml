@@ -6,7 +6,7 @@ jdk:
 env:
   - URL=https://github.com/redpen-cc/redpen/releases/download/redpen-1.10.1
 before_install:
-  - openssl aes-256-cbc -K $encrypted_1d5c74be6b6b_key -iv $encrypted_1d5c74be6b6b_iv -in id_rsa.enc -out id_rsa -md md5
+  - openssl aes-256-cbc -K $encrypted_732321951b07_key -iv $encrypted_732321951b07_iv -in id_rsa.enc -out id_rsa -d
   - mv id_rsa ~/.ssh/
   - eval "$(ssh-agent -s)"
   - chmod 600 ~/.ssh/id_rsa
