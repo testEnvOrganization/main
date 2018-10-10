@@ -9,8 +9,8 @@ before_install:
   - openssl aes-256-cbc -K $encrypted_1d5c74be6b6b_key -iv $encrypted_1d5c74be6b6b_iv -in id_rsa.enc -out id_rsa -md md5
   - mv id_rsa ~/.ssh/
   - eval "$(ssh-agent -s)"
-  - ssh-add ~/.ssh/id_rsa
   - chmod 600 ~/.ssh/id_rsa
+  - ssh-add ~/.ssh/id_rsa
 #  - ls ~/.ssh/
 #  - cat ~/.ssh/config
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
